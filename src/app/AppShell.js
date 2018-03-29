@@ -1,5 +1,6 @@
 import React from 'react'
 import App from './components/app'
+import { Provider as ReduxProvider } from 'react-redux'
 
 class AppShell extends React.Component {
   componentDidMount () {
@@ -20,7 +21,9 @@ class AppShell extends React.Component {
     const { store } = this.props
 
     return (
-      <App store={store}></App>
+      <ReduxProvider store={store}>
+        <App />
+      </ReduxProvider>
     )
   }
 }

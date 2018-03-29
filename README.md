@@ -1,10 +1,10 @@
 # Weather PWA
 
-This is an example project created using [Create-React-App](https://github.com/facebook/create-react-app) and upgraded to have progressive superpowers using (LINKTO: Nearform's PWA example) as a guide.
+This is an example project created using (LINKTO: Nearform's PWA example) as a starting point.
 
 ## Notes
 
-1) Set up new Create React App
+1) Set up app based on React-PWA
 2) Add in components using Redux, redux promise and the Weather Underground API as a source
 3) Basic functionality:
 
