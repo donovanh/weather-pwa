@@ -22,7 +22,12 @@ app.get('/api/', (req, res) => {
   const { appid, q } = req.query || {}
   if (!appid) return
   const url = `http://api.openweathermap.org/data/2.5/forecast?appid=${appid}&q=${q}`
-  request(url).pipe(res)
+  request(url, (error, response, body) => {
+    if (error) {
+      res.send({})
+    }
+    res.send(body)
+  })
 })
 
 function init () {
