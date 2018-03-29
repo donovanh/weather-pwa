@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import Chart from '../components/chart'
+import _ from 'lodash'
 
 class WeatherList extends Component {
 
@@ -25,6 +26,13 @@ class WeatherList extends Component {
     )
   }
 
+  uniqueCities(cityArray) {
+    return _.uniqBy(cityArray, (item) => {
+      console.log(item)
+      return item.city.name
+    });
+  }
+
   render() {
     return  (
       <table className="table table-hover">
@@ -37,7 +45,7 @@ class WeatherList extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.weather && this.props.weather.map(this.renderWeather)}
+          {this.props.weather && this.uniqueCities(this.props.weather).map(this.renderWeather)}
         </tbody>
       </table>
     )

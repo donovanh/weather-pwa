@@ -54,6 +54,17 @@ For data storage, set up the `app/store` folder to initialise the initial state 
 
 Add in `.sass-lint.yml` and `.babelrc` and `workbox.config.js`
 
+IMPORTANT (make a FAQ) Make sure in `app/AppShell` any Redux or other data store is applied using a `Provider`. 
+
+At this point the React app should be being rendered server-side.
+
+### Service worker setup
+
+The service worker script `sw.js` is generated using `npm run build:sw` - based on settings in `workbox.config.js`.
+
+
+
+
 
 
 TODO
