@@ -29,7 +29,7 @@ class WeatherList extends Component {
 
   uniqueCities(cityArray) {
     return _.uniqBy(cityArray, (item) => {
-      if (!item.city) return
+      if (!item || !item.city) return
       return item.city.name
     });
   }

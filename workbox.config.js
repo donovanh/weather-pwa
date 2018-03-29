@@ -19,12 +19,12 @@ module.exports = {
     // This will make sure that app-shell.html is both initially precached and
     // kept up to date; any time any of the dependency files/patterns
     // listed gets updated, the SW will automatically update the cache.
-    '/app-shell/': [
+    '/': [
       'js/*app-shell.js',
       'css/*app-shell.css'
     ]
   },
-  navigateFallback: '/app-shell/',
+  navigateFallback: '/',
   navigateFallbackWhitelist: [],
   runtimeCaching: [
     // cache dynamic images - if applicable
