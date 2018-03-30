@@ -66,4 +66,4 @@ You may need to set up a local proxy for any requests. In this example I'm using
 
 ## Using localStorage along with service worker for offline capabilities
 
-...
+For this app I have added in a bit of logic that saves the "store" to localStorage and loads it when the app launches. This helps when going offline / online by preserving state between sessions.
