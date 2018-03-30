@@ -4,8 +4,20 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise'
 import reducers from './store/reducers'
+import { loadState, saveState } from './localStorage'
+
+const persistedState = loadState()
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore)
+
+const store = createStoreWithMiddleware(
+  reducers,
+  persistedState
+)
+
+store.subscribe(() => {
+  saveState(store.getState())
+})
 
 class AppShell extends React.Component {
   componentDidMount () {
@@ -23,10 +35,8 @@ class AppShell extends React.Component {
   }
 
   render () {
-    const { store } = this.props
-
     return (
-      <Provider store={createStoreWithMiddleware(reducers)}>
+      <Provider store={store}>
         <App />
       </Provider>
     )

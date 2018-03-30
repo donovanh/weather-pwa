@@ -34,8 +34,8 @@ class WeatherList extends Component {
     });
   }
 
-  showHeadings() {
-    if (!this.props.weather.length)
+  hasWeather() {
+    if (!this.props.weather || !this.props.weather.length)
       return false
 
     return true
@@ -52,7 +52,7 @@ class WeatherList extends Component {
           transitionAppear={true}
           component="thead"
         >
-          {this.showHeadings() && (<tr>
+          {this.hasWeather() && (<tr>
             <th>City</th>
             <th>Temperature (c)</th>
             <th>Pressure (hPa)</th>
@@ -67,7 +67,7 @@ class WeatherList extends Component {
           transitionAppear={true}
           component="tbody"
         >
-          {this.uniqueCities(this.props.weather).map(this.renderWeather)}
+          {this.hasWeather() && this.uniqueCities(this.props.weather).map(this.renderWeather)}
         </ReactCSSTransitionGroup>
       </table>
     )

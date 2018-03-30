@@ -63,3 +63,7 @@ At this point the React app should be being rendered server-side.
 The service worker script `sw.js` is generated using `npm run build:sw` - based on settings in `workbox.config.js`.
 
 You may need to set up a local proxy for any requests. In this example I'm using a proxy at url `/api/`. The service worker will cache any requests through this url.
+
+## Using localStorage along with service worker for offline capabilities
+
+...
