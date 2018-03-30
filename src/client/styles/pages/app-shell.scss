@@ -38,6 +38,14 @@ body {
   }
 }
 
+.network-message {
+  text-align: center;
+  color: red;
+}
+
+
+/* Animations */
+
 .fade-enter {
   opacity: 0;
   transform: translateY(1rem);
